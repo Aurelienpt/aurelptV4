@@ -8,6 +8,37 @@ body {
     min-height: 100vh;
 }
 
+canvas {
+    border: 1px solid black;
+    display: block;
+    margin: 0 auto;
+}
+#gameContainer {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+}
+#startButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#replayButton {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#gameMessage {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: white;
+}
+
 /* Navbar styling */
 .navbar-custom {
     background: rgba(11, 27, 43, 0.9);
@@ -207,4 +238,12 @@ body {
 .box-content a {
     position: relative;
     z-index: 1;
+}
+
+
+
+
+.texte {
+    text-align: center;
+    font-family: Roboto, sans-serif;
 }

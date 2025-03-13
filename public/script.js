@@ -2,7 +2,6 @@
 const githubUsername = 'Aurelienpt';
 const projectsContainer = document.getElementById('github-projects');
 
-        // Map GitHub language names to Devicon classes
         const languageIcons = {
             'JavaScript': 'devicon-javascript-plain',
             'Python': 'devicon-python-plain',
@@ -14,7 +13,7 @@ const projectsContainer = document.getElementById('github-projects');
             'C#': 'devicon-csharp-plain',
             'PHP': 'devicon-php-plain',
             'Ruby': 'devicon-ruby-plain',
-            'null': 'devicon-git-plain' // Default for no language
+            'null': 'devicon-git-plain' 
         };
 
         async function fetchGitHubProjects() {
@@ -40,8 +39,8 @@ const projectsContainer = document.getElementById('github-projects');
                                 </div>
                                 <div class="collapse" id="${boxId}">
                                     <div class="box-content">
-                                        <p>${repo.description || 'No description available'}</p>
-                                        <a href="${repo.html_url}" target="_blank" class="btn btn-primary btn-sm">View on GitHub</a>
+                                        <p>${repo.description || 'aucune description'}</p>
+                                        <a href="${repo.html_url}" target="_blank" class="btn btn-primary btn-sm">Voir sur GitHub</a>
                                     </div>
                                 </div>
                             </div>
@@ -50,10 +49,10 @@ const projectsContainer = document.getElementById('github-projects');
                     projectsContainer.innerHTML += boxHtml;
                 });
 
-                // Add event listeners to stop propagation from content
+
                 document.querySelectorAll('.box-content').forEach(content => {
                     content.addEventListener('click', (e) => {
-                        e.stopPropagation(); // Prevent clicks in content from toggling collapse
+                        e.stopPropagation(); 
                     });
                 });
 
@@ -63,5 +62,5 @@ const projectsContainer = document.getElementById('github-projects');
             }
         }
 
-        // Fetch projects when the page loads
+
         fetchGitHubProjects();
