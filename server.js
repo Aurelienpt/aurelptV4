@@ -1,12 +1,11 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
 
-// Servir les fichiers statiques (CSS, images, etc.) depuis le dossier "public"
+// Serve static files from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Définir les routes pour chaque page
+// Define routes for each page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
@@ -23,7 +22,5 @@ app.get('/projets', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'projets.html'));
 });
 
-// Démarrer le serveur
-app.listen(port, () => {
-  console.log(`Serveur démarré sur http://localhost:${port}`);
-});
+// Export the app for Vercel (no app.listen here!)
+module.exports = app;
