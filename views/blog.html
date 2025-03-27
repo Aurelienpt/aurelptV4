@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/blog.css">
     <link rel="icon" href="/img/icon.ico">
 
 </head>
@@ -33,7 +34,40 @@
         <h1 class="neon-effect-noanim">Blog</h1>
     </div>
 
+<!-- Section Blog -->
+<section class="blog-section">
+    <div class="container">
+        <!-- Filtres -->
+        <div class="mb-5 text-center">
+            <button class="btn btn-sort active" data-sort="date">Plus récents</button>
+            <button class="btn btn-sort" data-sort="views">Plus populaires</button>
+        </div>
+
+        <!-- Grille d'articles -->
+        <div class="row g-4" id="blog-container">
+            <!-- Articles will be generated here -->
+        </div>
+    </div>
+</section>
+
+<!-- Modals des articles -->
+<div class="modal fade" id="blogModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalContent"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/script.js"></script>
+    <script src="blog.js"></script>
 </body>
 </html>
