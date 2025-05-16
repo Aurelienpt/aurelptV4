@@ -5,7 +5,7 @@ body {
     font-family: 'Orbitron', sans-serif; /* Police futuriste */
     background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
     color: #ffffff;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 canvas {
@@ -484,4 +484,229 @@ canvas {
     color: #e0e0e0;
     line-height: 1.6;
     margin-bottom: 0;
+}
+
+
+
+.site-footer {
+    padding: 1rem 0;
+    border-top: 2px solid;
+    border-image: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    border-image-slice: 1;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-text {
+    color: #e0e0e0;
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.heart {
+    color: #ff073a;
+    animation: pulse 1.5s infinite;
+    display: inline-block;
+}
+
+.copyright {
+    color: #00d2ff;
+    margin: 0 5px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+
+
+/* Home page */
+
+/* ========== HOME PAGE STYLES ========== */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.typed-text {
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    border-right: 2px solid #00d2ff;
+    animation: typing 3s steps(40), blink-caret 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Indicateur de scroll */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #00d2ff;
+    border-radius: 15px;
+    position: relative;
+    animation: scroll-indicator 2s infinite;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 10px;
+    background: #00d2ff;
+    border-radius: 2px;
+    animation: scroll-wheel 2s infinite;
+}
+
+@keyframes scroll-indicator {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes scroll-wheel {
+    0% { opacity: 1; }
+    50% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; }
+}
+
+.home-interactive-nav {
+    margin-top: 3rem;
+}
+
+.home-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.home-nav-item {
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #3a7bd5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    color: #00d2ff;
+}
+
+.home-nav-item:hover {
+    background: rgba(58, 123, 213, 0.2);
+    transform: translateY(-3px);
+}
+
+.home-nav-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent 49%, 
+        #00d2ff 49%, 
+        #00d2ff 51%, 
+        transparent 51%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.home-nav-item:hover .home-nav-glitch {
+    opacity: 0.3;
+    animation: glitch-line 0.5s infinite;
+}
+
+.cta-section {
+    padding: 4rem 0;
+}
+
+.cta-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #3a7bd5;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.cta-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
+}
+
+.cta-icon {
+    font-size: 2.5rem;
+    color: #00d2ff;
+    margin-bottom: 1rem;
+}
+
+.cta-btn {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    margin-top: 1rem;
+}
+
+/* Animation machine à écrire */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00d2ff }
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .home-nav-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .typed-text {
+        font-size: 1.2rem;
+    }
+    
+    .cta-card {
+        padding: 1.5rem;
+    }
 }

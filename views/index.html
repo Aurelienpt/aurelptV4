@@ -27,10 +27,74 @@
         </div>
     </nav>
 
-    <!-- Contenu -->
-    <div class="content">
-        <h1 class="neon-effect">Bienvenue sur Aurelpt V4 !</h1>
+<!-- Page d'accueil modifiée -->
+<section class="homepage">
+    <!-- Hero Section -->
+    <section class="hero-section vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="hero-content" data-aos="zoom-in">
+                        <h1 class="hero-title mb-4">
+                            <span class="gradient-text neon-effect">Bienvenue sur Aurelpt V4 !</span>
+                        </h1>
+                        
+                        <div class="typing-container mb-4">
+                            <p class="hero-subtitle typed-text">
+                                Le meilleur site du monde
+                            </p>
+                        </div>
+    
+                        <div class="scroll-indicator">
+                            <div class="mouse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Appel à l'action -->
+    <div class="cta-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="cta-card" data-aos="zoom-in">
+                        <div class="cta-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Voir mes Projets</h3>
+                        <p>Découvrez mes réalisations techniques</p>
+                        <a href="/projets" class="btn cta-btn">Explorer</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="cta-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="cta-icon">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <h3>Lire le Blog</h3>
+                        <p>Articles sur un peu tout</p>
+                        <a href="/deepsite  " class="btn cta-btn">Découvrir</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="cta-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="cta-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Me Contacter</h3>
+                        <p>Collaborons ensemble !</p>
+                        <a href="mailto:pro.aurelien.petit@outlook.fr" class="btn cta-btn">Discuter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
 
     <div id="gameContainer">
         <canvas id="pongCanvas" width="600" height="400"></canvas>
@@ -39,8 +103,27 @@
         <button id="replayButton" class="btn btn-primary" style="display: none;">Rejouer</button>
     </div>
 
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Fait avec <span class="heart">❤️</span> par Aurélien 
+                    <span class="copyright">©</span> 
+                    <span id="current-year">2024</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/script.js"></script>
     <script src="/pong.js"></script>
+
+    <script src="/smoothscroll.js"></script>
+        
 </body>
 </html>
